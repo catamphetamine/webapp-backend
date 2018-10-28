@@ -6,7 +6,7 @@ npm install
 
 ## Run
 
-Create `serverless.json` file:
+Create `serverless.json` file (is excluded from the repo because it will contain passwords):
 
 ```json
 {
