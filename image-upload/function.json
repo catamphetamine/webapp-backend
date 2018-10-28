@@ -1,0 +1,5 @@
+{
+	"name": "upload-image",
+	"path": "/images/upload",
+	"method": "POST"
+}

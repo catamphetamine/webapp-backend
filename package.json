@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "name": "webapp-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "serverless deploy dev",
+    "update-routes": "serverless update-routes dev",
+    "create-api": "serverless create-api",
+    "dev": "serverless run dev 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catamphetamine/webapp-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catamphetamine/webapp-backend/issues"
+  },
+  "homepage": "https://github.com/catamphetamine/webapp-backend#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-destructuring": "^7.1.3",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "serverless-functions": "^0.4.0"
+  }
+}
