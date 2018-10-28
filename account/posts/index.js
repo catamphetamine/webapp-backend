@@ -2,6 +2,11 @@ export default async function({ params, body, query }) {
 	const id = params.id
 
 	let posts = await api.db.Post.findAll({
+		order: [
+			['createdAt', 'desc']
+		],
+		limit: 10,
+		offset: query.offset,
 		include: [{
 			model: api.db.Account,
 			attributes: [
