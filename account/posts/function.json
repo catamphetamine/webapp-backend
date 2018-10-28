@@ -1,0 +1,5 @@
+{
+	"name": "get-account-posts",
+	"path": "/accounts/{id}/posts",
+	"method": "GET"
+}

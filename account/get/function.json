@@ -1,5 +1,5 @@
 {
 	"name": "get-account",
-	"path": "/account/{id}",
+	"path": "/accounts/{id}",
 	"method": "GET"
 }

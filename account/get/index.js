@@ -4,7 +4,7 @@ export default async function({ params, body, query }) {
 	let id = params.id
 	let account
 
-	if (isNameId(id)) {
+	if (isAliasId(id)) {
 		account = await api.db.Account.findOne({
 			where: {
 				idAlias: id
@@ -20,12 +20,13 @@ export default async function({ params, body, query }) {
 		throw new NotFound()
 	}
 
-	account = account.toJSON()
-	account.data = JSON.parse(account.data)
-
-  return account
+  return {
+  	...account.toJSON(),
+  	data: null,
+  	...JSON.parse(account.data)
+  }
 }
 
-function isNameId(id) {
+function isAliasId(id) {
 	return parseInt(id) !== id
 }
