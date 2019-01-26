@@ -7,7 +7,7 @@ export default async function({ params, body, query }) {
 	if (isAliasId(id)) {
 		account = await api.db.Account.findOne({
 			where: {
-				idAlias: id
+				idAlias: id.toLowerCase()
 			}
 		})
 		id = account.id
@@ -20,11 +20,12 @@ export default async function({ params, body, query }) {
 		throw new NotFound()
 	}
 
-  return {
-  	...account.toJSON(),
-  	data: null,
-  	...JSON.parse(account.data)
-  }
+	return {
+		// `data` must not override other properties.
+		...JSON.parse(account.data),
+		...account.toJSON(),
+		data: null
+	}
 }
 
 function isAliasId(id) {
