@@ -10,7 +10,9 @@ export default async function({ params, body, query }) {
 				idAlias: id.toLowerCase()
 			}
 		})
-		id = account.id
+		if (account) {
+			id = account.id
+		}
 	}
 	else {
 		account = await api.db.Account.findByPk(id)
