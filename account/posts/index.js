@@ -30,13 +30,16 @@ export default async function({ params, body, query }) {
 
 	posts = posts.map(_ => _.toJSON())
 
-	const authorPicture = JSON.parse(posts[0].author.data).picture
+	const account = posts[0].account
+	const accountPicture = JSON.parse(account.data).picture
 
 	for (const post of posts) {
-		post.author.picture = authorPicture
-		post.author.data = null
+		post.account.picture = accountPicture
+		post.account.data = undefined
 		if (post.content) {
-			post.content = JSON.parse(post.content)
+			if (post.content[0] === '[') {
+				post.content = JSON.parse(post.content)
+			}
 		}
 		if (post.attachments) {
 			post.attachments = JSON.parse(post.attachments)
