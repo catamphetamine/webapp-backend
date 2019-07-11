@@ -6,7 +6,7 @@ Then:
 
 ```
 git clone git@github.com:catamphetamine/webapp-backend.git
-cd webapp-api
+cd webapp-backend
 npm install
 ```
 
