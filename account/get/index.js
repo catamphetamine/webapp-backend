@@ -5,7 +5,7 @@ export default async function({ params, body, query }) {
 	let account
 
 	if (isAliasId(id)) {
-		account = await api.db.Account.findOne({
+		account = await db.Account.findOne({
 			where: {
 				idAlias: id.toLowerCase()
 			}
@@ -15,7 +15,7 @@ export default async function({ params, body, query }) {
 		}
 	}
 	else {
-		account = await api.db.Account.findByPk(id)
+		account = await db.Account.findByPk(id)
 	}
 
 	if (!account) {

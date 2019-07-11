@@ -1,12 +1,18 @@
 ## Install
 
+First, install [`webapp-internal-api`](https://github.com/catamphetamine/webapp-internal-api) and [`webapp-db`](https://github.com/catamphetamine/webapp-db) and seed the database (as per `webapp-db` README).
+
+Then:
+
 ```
+git clone git@github.com:catamphetamine/webapp-backend.git
+cd webapp-api
 npm install
 ```
 
 ## Run
 
-Create `serverless.json` file (is excluded from the repo because it will contain passwords):
+Create `serverless.json` file (it is excluded from the repo because it contains passwords):
 
 ```json
 {
@@ -17,10 +23,8 @@ Create `serverless.json` file (is excluded from the repo because it will contain
 }
 ```
 
-Run the API server locally:
+Run:
 
 ```
 npm run dev
 ```
-
-Requires `webapp-api`.

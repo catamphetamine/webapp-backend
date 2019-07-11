@@ -1,14 +1,14 @@
 export default async function({ params, body, query }) {
 	const id = params.id
 
-	let posts = await api.db.Post.findAll({
+	let posts = await db.Post.findAll({
 		order: [
 			['createdAt', 'desc']
 		],
 		limit: 10,
 		offset: query.offset,
 		include: [{
-			model: api.db.Account,
+			model: db.Account,
 			attributes: [
 				'id',
 				'idAlias',
@@ -16,7 +16,7 @@ export default async function({ params, body, query }) {
 				'data'
 			],
 			where: {
-				[api.db.Op.or]: {
+				[db.Op.or]: {
 					id,
 					idAlias: id
 				}
